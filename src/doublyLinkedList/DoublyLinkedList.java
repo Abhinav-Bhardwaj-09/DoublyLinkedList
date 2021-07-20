@@ -24,10 +24,13 @@ public class DoublyLinkedList {
         }
         else {
             newNode.setNextNode(head);
+            head.setPreviousNode(newNode);
             head = newNode;
             length++;
         }
     }
+
+
 
 
 
