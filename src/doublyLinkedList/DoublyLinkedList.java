@@ -63,6 +63,39 @@ public class DoublyLinkedList {
 
 
 
+    // To insert at any position
+    public void insertAtPosition (int data, int position) {
+        if(position > length+1) {
+            System.out.println("Please provide value of position <= length of LinkedList.");
+            return;
+        }
+
+        if(position == 1) {
+            insertAtStart(data);
+            return;
+        }
+        else if(position == length+1) {
+            insertAtEnd(data);
+            return;
+        }
+
+        int count = 1;
+        Node current = head;
+        Node newNode = new Node(data);
+        while(count <= length) {
+            if(count == position) {
+                newNode.setPreviousNode(current.getPreviousNode());
+                newNode.setNextNode(current);
+                return;
+            }
+            current = current.getNextNode();
+            count++;
+        }
+
+    }
+
+
+
     // To print from head towards tail
     public void displayH2T () {
         if(isEmpty()) {
