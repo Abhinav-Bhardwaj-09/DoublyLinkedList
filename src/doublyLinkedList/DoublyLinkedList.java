@@ -15,6 +15,18 @@ public class DoublyLinkedList {
 
 
 
+    // To check whether LinkedList is empty or not
+    public boolean isEmpty () {
+        return length == 0;
+    }
+
+
+    // To return length of the linkedlist
+    public int lengthLinkedList() {
+        return length;
+    }
+
+
     // To insert before head
     public void insertAtStart (int data) {
         Node newNode = new Node(data);
@@ -47,13 +59,6 @@ public class DoublyLinkedList {
             tail = newNode;
         }
         length++;
-    }
-
-
-
-    // To check whether LinkedList is empty or not
-    public boolean isEmpty () {
-        return length == 0;
     }
 
 
