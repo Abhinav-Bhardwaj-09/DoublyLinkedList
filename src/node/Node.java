@@ -12,7 +12,7 @@ public class Node {
     Node previousNode;
     Node nextNode;
 
-    public Node(int data, Node previousNode, Node nextNode) {
+    public Node(int data) {
         this.data = data;
         this.previousNode = null;
         this.nextNode = null;
