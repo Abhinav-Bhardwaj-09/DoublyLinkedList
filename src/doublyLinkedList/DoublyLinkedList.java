@@ -20,14 +20,13 @@ public class DoublyLinkedList {
         if (head == null) {
             head = newNode;
             tail = newNode;
-            length++;
         }
         else {
             newNode.setNextNode(head);
             head.setPreviousNode(newNode);
             head = newNode;
-            length++;
         }
+        length++;
     }
 
     public void insertAtEnd(int data) {
@@ -36,21 +35,38 @@ public class DoublyLinkedList {
         if (head == null) {
             head = newNode;
             tail = newNode;
-            length++;
         }
         else {
             tail.setNextNode(newNode);
             newNode.setPreviousNode(tail);
             tail = newNode;
-            length++;
         }
-
+        length++;
     }
 
 
     public boolean isEmpty () {
         return length == 0;
     }
+
+    public void displayH2T () {
+        if(isEmpty()) {
+            System.out.println("Your Doubly LinkedList is empty...");
+            return;
+        }
+
+        Node current = head;
+        while(current != null) {
+
+            System.out.print(current.getData());
+
+            if(current.getNextNode() != null) {
+                System.out.print(" --> ");
+            }
+            current = current.getNextNode();
+        }
+    }
+
 
 
 
