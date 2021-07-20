@@ -11,7 +11,7 @@ import node.Node;
 
 public class DoublyLinkedList {
     private Node head, tail;
-    private int length;
+    private int length = 0;
 
 
     public void insertAtStart (int data) {
@@ -48,6 +48,9 @@ public class DoublyLinkedList {
     }
 
 
+    public boolean isEmpty () {
+        return length == 0;
+    }
 
 
 
