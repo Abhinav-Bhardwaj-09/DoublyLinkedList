@@ -14,6 +14,8 @@ public class DoublyLinkedList {
     private int length = 0;
 
 
+
+    // To insert before head
     public void insertAtStart (int data) {
         Node newNode = new Node(data);
 
@@ -29,6 +31,9 @@ public class DoublyLinkedList {
         length++;
     }
 
+
+
+    // To insert after tail
     public void insertAtEnd(int data) {
         Node newNode = new Node(data);
 
@@ -45,10 +50,15 @@ public class DoublyLinkedList {
     }
 
 
+
+    // To check whether LinkedList is empty or not
     public boolean isEmpty () {
         return length == 0;
     }
 
+
+
+    // To print from head towards tail
     public void displayH2T () {
         if(isEmpty()) {
             System.out.println("Your Doubly LinkedList is empty...");
@@ -63,7 +73,34 @@ public class DoublyLinkedList {
             if(current.getNextNode() != null) {
                 System.out.print(" --> ");
             }
+            else {
+                System.out.println();
+            }
             current = current.getNextNode();
+        }
+    }
+
+
+
+
+    // To print from tail towards head
+    public void displayT2H () {
+        if(isEmpty()) {
+            System.out.println("Your Doubly LinkedList is empty...");
+            return;
+        }
+
+        Node current = tail;
+        while(current != null) {
+            System.out.print(current.getData());
+
+            if(current.getPreviousNode() != null) {
+                System.out.print(" <-- ");
+            }
+            else {
+                System.out.println();
+            }
+            current = current.getPreviousNode();
         }
     }
 
