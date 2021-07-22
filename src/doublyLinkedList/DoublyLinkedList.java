@@ -110,6 +110,19 @@ public class DoublyLinkedList {
 
 
 
+    // To delete from the tail side
+    public void deleteFromEnd () {
+        if(isEmpty()) {
+            System.out.println("Your Doubly LinkedList is empty...");
+            return;
+        }
+
+        tail = tail.getPreviousNode();
+        tail.setNextNode(null);
+    }
+
+
+
 
     // To print from head towards tail
     public void displayH2T () {
