@@ -103,6 +103,11 @@ public class DoublyLinkedList {
             System.out.println("Your Doubly LinkedList is empty...");
             return;
         }
+        else if(length == 1) {
+            head = null;
+            tail = null;
+            return;
+        }
 
         head = head.getNextNode();
         head.setPreviousNode(null);
@@ -110,16 +115,25 @@ public class DoublyLinkedList {
 
 
 
-    // To delete from the tail side
+    // To delete a node from the tail side
     public void deleteFromEnd () {
         if(isEmpty()) {
             System.out.println("Your Doubly LinkedList is empty...");
+            return;
+        }
+        else if(length == 1) {
+            head = null;
+            tail = null;
             return;
         }
 
         tail = tail.getPreviousNode();
         tail.setNextNode(null);
     }
+
+
+
+
 
 
 
