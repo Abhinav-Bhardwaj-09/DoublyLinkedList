@@ -63,7 +63,7 @@ public class DoublyLinkedList {
 
 
 
-    // To insert at any position
+    // To insert at any given position
     public void insertAtPosition (int data, int position) {
         if(position > length+1) {
             System.out.println("Please provide value of position <= length of LinkedList.");
@@ -93,6 +93,21 @@ public class DoublyLinkedList {
         }
 
     }
+
+
+
+
+    // To delete a node from the head side
+    public void deleteFromStart () {
+        if(isEmpty()) {
+            System.out.println("Your Doubly LinkedList is empty...");
+            return;
+        }
+
+        head = head.getNextNode();
+        head.setPreviousNode(null);
+    }
+
 
 
 
