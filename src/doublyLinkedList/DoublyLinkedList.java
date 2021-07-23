@@ -21,10 +21,12 @@ public class DoublyLinkedList {
     }
 
 
+
     // To return length of the linkedlist
     public int lengthLinkedList() {
         return length;
     }
+
 
 
     // To insert before head
@@ -66,7 +68,7 @@ public class DoublyLinkedList {
     // To insert at any given position
     public void insertAtPosition (int data, int position) {
         if(position > length+1) {
-            System.out.println("Please provide value of position <= length of LinkedList.");
+            System.out.println("Position should be less than or equal to the length of LinkedList.");
             return;
         }
 
@@ -91,9 +93,7 @@ public class DoublyLinkedList {
             current = current.getNextNode();
             count++;
         }
-
     }
-
 
 
 
@@ -133,8 +133,40 @@ public class DoublyLinkedList {
 
 
 
+    // To delete a node from a given position
+    public void deleteFromPosition(int position) {
+        if(isEmpty()) {
+            System.out.println("Your Doubly LinkedList is empty...");
+            return;
+        }
+        else if(position > length) {
+            System.out.println("Position should be less than or equal to the length of LinkedList.");
+            return;
+        }
+        else if(position == 1) {
+            deleteFromStart();
+            return;
+        }
+        else if(position == length) {
+            deleteFromEnd();
+            return;
+        }
 
-
+        int count = 1;
+        Node previous = null;
+        Node current = head;
+        while (count <= length) {
+            if(count == position) {
+                previous.setNextNode(current.getNextNode());
+                current.getNextNode().setPreviousNode(previous);
+                length--;
+                return;
+            }
+            previous = current;
+            current = current.getNextNode();
+            count++;
+        }
+    }
 
 
 
@@ -162,7 +194,6 @@ public class DoublyLinkedList {
 
 
 
-
     // To print from tail towards head
     public void displayT2H () {
         if(isEmpty()) {
@@ -183,13 +214,5 @@ public class DoublyLinkedList {
             current = current.getPreviousNode();
         }
     }
-
-
-
-
-
-
-
-
 
 }
