@@ -111,6 +111,7 @@ public class DoublyLinkedList {
 
         head = head.getNextNode();
         head.setPreviousNode(null);
+        length--;
     }
 
 
@@ -129,6 +130,7 @@ public class DoublyLinkedList {
 
         tail = tail.getPreviousNode();
         tail.setNextNode(null);
+        length--;
     }
 
 
